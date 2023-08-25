@@ -1,14 +1,19 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
   env: {
     browser: true,
     es2021: true,
     node: true,
   },
+  globals: {
+    uni: true, // readonly
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-essential',
     'prettier',
+    './.eslintrc-auto-import.json',
   ],
   overrides: [
     {
