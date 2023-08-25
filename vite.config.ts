@@ -1,17 +1,17 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import { defineConfig } from "vite";
+import { resolve } from "path";
 
-import uni from '@dcloudio/vite-plugin-uni';
+import uni from "@dcloudio/vite-plugin-uni";
 
-import AutoImport from 'unplugin-auto-import/vite';
+import AutoImport from "unplugin-auto-import/vite";
+import PiniaAutoRefs from "pinia-auto-refs";
+import { UnifiedViteWeappTailwindcssPlugin as uvtw } from "weapp-tailwindcss/vite";
+import rem2px from "postcss-rem-to-responsive-pixel";
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
 
-import { UnifiedViteWeappTailwindcssPlugin as uvtw } from 'weapp-tailwindcss/vite';
-import rem2px from 'postcss-rem-to-responsive-pixel';
-import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
-
-const isH5 = process.env.UNI_PLATFORM === 'h5';
-const isApp = process.env.UNI_PLATFORM === 'app';
+const isH5 = process.env.UNI_PLATFORM === "h5";
+const isApp = process.env.UNI_PLATFORM === "app";
 const WeappTailwindcssDisabled = isH5 || isApp;
 
 const postcssPlugins = [tailwindcss(), autoprefixer()];
@@ -20,8 +20,8 @@ if (!WeappTailwindcssDisabled) {
   postcssPlugins.push(
     rem2px({
       rootValue: 32,
-      propList: ['*'],
-      transformUnit: 'rpx',
+      propList: ["*"],
+      transformUnit: "rpx",
     }),
   );
 }
@@ -29,12 +29,20 @@ if (!WeappTailwindcssDisabled) {
 export default defineConfig({
   plugins: [
     uni(),
+    PiniaAutoRefs({ storeDir: "src/store/modules" }),
     uvtw({
       disabled: WeappTailwindcssDisabled,
     }),
     AutoImport({
-      imports: ['vue', 'uni-app', 'pinia'],
-      dts: './src/auto-imports.d.ts',
+      imports: [
+        "vue",
+        "uni-app",
+        "pinia",
+        {
+          "@/helper/pinia-auto-refs": ["useStore"],
+        },
+      ],
+      dts: "./src/auto-imports.d.ts",
       eslintrc: {
         enabled: true,
       },
@@ -42,7 +50,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      "@": resolve(__dirname, "src"),
     },
   },
   css: {
