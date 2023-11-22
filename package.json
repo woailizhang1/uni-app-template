@@ -2,6 +2,8 @@
   "name": "uni-app-template",
   "version": "0.0.0",
   "scripts": {
+    "dev": "uni -p mp-weixin",
+    "build": "uni build -p mp-weixin",
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
     "dev:app-ios": "uni -p app-ios",
