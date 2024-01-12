@@ -5,7 +5,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "/@/*": ["./src/*"],
+      "/#/*": ["./types/*"]
     },
     "lib": ["esnext", "dom"],
     "types": ["@dcloudio/types","pinia-plugin-persist-uni","@tuniao/tnui-vue3-uniapp/global.d.ts"]

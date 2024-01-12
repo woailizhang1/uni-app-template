@@ -8,7 +8,14 @@
       "^tn-(.*)": "@tuniao/tnui-vue3-uniapp/components/$1/src/$1.vue"
     }
   },
+
   "pages": [
+    {
+      "path": "pages/guide",
+      "style": {
+        "navigationBarTitleText": "引导"
+      }
+    },
     {
       "path": "pages/home/index",
       "style": {
@@ -40,48 +47,17 @@
     "navigationBarBackgroundColor": "#FFF",
     "backgroundColor": "#FFF"
   },
-  "tabBar": {
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/home/index",
-        "iconPath": "static/image/home/icon-home.png",
-        "selectedIconPath": "static/image/home/icon-home.png",
-        "text": "home",
-        "iconfont": {
-          "text": "\ue102",
-          "selectedText": "\ue103",
-          "fontSize": "17px",
-          "color": "#000000",
-          "selectedColor": "#0000ff"
+  "subPackages": [
+    {
+      "root": "packages",
+      "pages": [
+        {
+          "path": "pages/tab-bar/index",
+          "style": {
+            "navigationBarTitleText": "tab-bar"
+          }
         }
-      },
-      {
-        "pagePath": "pages/serve/index",
-        "iconPath": "static/image/home/icon-serve.png",
-        "selectedIconPath": "static/image/home/icon-serve.png",
-        "text": "serve",
-        "iconfont": {
-          "text": "\ue102",
-          "selectedText": "\ue103",
-          "fontSize": "17px",
-          "color": "#000000",
-          "selectedColor": "#0000ff"
-        }
-      },
-      {
-        "pagePath": "pages/my/index",
-        "iconPath": "static/image/home/icon-my.png",
-        "selectedIconPath": "static/image/home/icon-my.png",
-        "text": "my",
-        "iconfont": {
-          "text": "\ue102",
-          "selectedText": "\ue103",
-          "fontSize": "17px",
-          "color": "#000000",
-          "selectedColor": "#0000ff"
-        }
-      }
-    ]
-  }
+      ]
+    }
+  ]
 }
