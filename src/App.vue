@@ -11,6 +11,8 @@ onHide(() => {
 });
 </script>
 <style lang="scss">
+@import '@tuniao/tn-style/dist/uniapp/index.css';
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";

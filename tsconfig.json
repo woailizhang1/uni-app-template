@@ -8,7 +8,7 @@
       "@/*": ["./src/*"]
     },
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types","pinia-plugin-persist-uni"]
+    "types": ["@dcloudio/types","pinia-plugin-persist-uni","@tuniao/tnui-vue3-uniapp/global.d.ts"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

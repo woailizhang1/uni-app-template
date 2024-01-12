@@ -1,84 +1,87 @@
 {
-	"easycom": {
-		"autoscan": true,
-		"custom": {
-			"^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
-		}
-	},
-	"pages": [
-		{
-			"path": "pages/home/index",
-			"style": {
-				"navigationBarTitleText": "home"
-			}
-		},
-		{
-			"path": "pages/serve/index",
-			"style": {
-				"navigationBarTitleText": "serve"
-			}
-		},
-		{
-			"path": "pages/my/index",
-			"style": {
-				"navigationBarTitleText": "my"
-			}
-		},
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app-template"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app-template",
-		"navigationBarBackgroundColor": "#FFF",
-		"backgroundColor": "#FFF"
-	},
-	"tabBar": {
-		"backgroundColor": "#ffffff",
-		"list": [
-			{
-				"pagePath": "pages/home/index",
-				"iconPath": "static/image/home/icon-home.png",
-				"selectedIconPath": "static/image/home/icon-home.png",
-				"text": "home",
-				"iconfont": {
-					"text": "\ue102",
-					"selectedText": "\ue103",
-					"fontSize": "17px",
-					"color": "#000000",
-					"selectedColor": "#0000ff"
-				}
-			},
-			{
-				"pagePath": "pages/serve/index",
-				"iconPath": "static/image/home/icon-serve.png",
-				"selectedIconPath": "static/image/home/icon-serve.png",
-				"text": "serve",
-				"iconfont": {
-					"text": "\ue102",
-					"selectedText": "\ue103",
-					"fontSize": "17px",
-					"color": "#000000",
-					"selectedColor": "#0000ff"
-				}
-			},
-			{
-				"pagePath": "pages/my/index",
-				"iconPath": "static/image/home/icon-my.png",
-				"selectedIconPath": "static/image/home/icon-my.png",
-				"text": "my",
-				"iconfont": {
-					"text": "\ue102",
-					"selectedText": "\ue103",
-					"fontSize": "17px",
-					"color": "#000000",
-					"selectedColor": "#0000ff"
-				}
-			}
-		]
-	}
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      "^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue",
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      "^tn-(.*)-(item|group)$": "@tuniao/tnui-vue3-uniapp/components/$1/src/$1-$2.vue",
+      "^tn-(.*)": "@tuniao/tnui-vue3-uniapp/components/$1/src/$1.vue"
+    }
+  },
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {
+        "navigationBarTitleText": "home"
+      }
+    },
+    {
+      "path": "pages/serve/index",
+      "style": {
+        "navigationBarTitleText": "serve"
+      }
+    },
+    {
+      "path": "pages/my/index",
+      "style": {
+        "navigationBarTitleText": "my"
+      }
+    },
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "uni-app-template"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app-template",
+    "navigationBarBackgroundColor": "#FFF",
+    "backgroundColor": "#FFF"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "static/image/home/icon-home.png",
+        "selectedIconPath": "static/image/home/icon-home.png",
+        "text": "home",
+        "iconfont": {
+          "text": "\ue102",
+          "selectedText": "\ue103",
+          "fontSize": "17px",
+          "color": "#000000",
+          "selectedColor": "#0000ff"
+        }
+      },
+      {
+        "pagePath": "pages/serve/index",
+        "iconPath": "static/image/home/icon-serve.png",
+        "selectedIconPath": "static/image/home/icon-serve.png",
+        "text": "serve",
+        "iconfont": {
+          "text": "\ue102",
+          "selectedText": "\ue103",
+          "fontSize": "17px",
+          "color": "#000000",
+          "selectedColor": "#0000ff"
+        }
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "static/image/home/icon-my.png",
+        "selectedIconPath": "static/image/home/icon-my.png",
+        "text": "my",
+        "iconfont": {
+          "text": "\ue102",
+          "selectedText": "\ue103",
+          "fontSize": "17px",
+          "color": "#000000",
+          "selectedColor": "#0000ff"
+        }
+      }
+    ]
+  }
 }
