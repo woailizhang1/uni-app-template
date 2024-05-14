@@ -1,6 +1,11 @@
-import piniaPersist from "pinia-plugin-persist-uni";
+import type { App } from "vue";
+
+// import piniaPersist from "pinia-plugin-persist-uni";
 import { createPinia } from "pinia";
-const pinia = createPinia();
-pinia.use(piniaPersist);
-export default pinia;
-// export * from "./modules/user";
+const store = createPinia();
+
+export function setupStore(app: App<Element>) {
+    // store.use(piniaPersist);
+    app.use(store);
+}
+export { store };

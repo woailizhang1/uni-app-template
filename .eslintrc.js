@@ -7,33 +7,35 @@ module.exports = {
   },
   globals: {
     uni: true, // readonly
+    defineOptions: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-essential',
-    'prettier',
-    './.eslintrc-auto-import.json',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-essential",
+    "prettier",
+    "./.eslintrc-auto-import.json",
   ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: 'script',
+        sourceType: "script",
       },
     },
   ],
-  parser: 'vue-eslint-parser',
+  parser: "vue-eslint-parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    parser: "@typescript-eslint/parser",
+    sourceType: "module",
   },
-  plugins: ['@typescript-eslint', 'vue', 'prettier'],
+  plugins: ["@typescript-eslint", "vue", "prettier"],
   rules: {
-    'vue/multi-word-component-names': 'off',
+    "vue/multi-word-component-names": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
 };

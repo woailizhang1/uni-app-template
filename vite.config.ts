@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 import uni from "@dcloudio/vite-plugin-uni";
-
+import DefineOptions from "unplugin-vue-define-options/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import PiniaAutoRefs from "pinia-auto-refs";
 import { UnifiedViteWeappTailwindcssPlugin as uvtw } from "weapp-tailwindcss/vite";
@@ -29,24 +29,17 @@ if (!WeappTailwindcssDisabled) {
 export default defineConfig({
   plugins: [
     uni(),
-    PiniaAutoRefs({ storeDir: "src/store/modules" }),
     uvtw({
       disabled: WeappTailwindcssDisabled,
     }),
     AutoImport({
-      imports: [
-        "vue",
-        "uni-app",
-        "pinia",
-        {
-          "@/helper/pinia-auto-refs": ["useStore"],
-        },
-      ],
+      imports: ["vue", "uni-app"],
       dts: "./src/auto-imports.d.ts",
       eslintrc: {
         enabled: true,
       },
     }),
+    DefineOptions(),
   ],
   resolve: {
     alias: {
